@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Battle Game Project</title>
+</head>
+<body>
+   <h1>Welcome</h1> 
+   <h1 class="message"></h1>
+   <div class="output"></div>
+   <input name="user" type="text" value="user">
+   <button class="btn1">Join</button>
+   <button class="btn2">Roll</button>
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+    socket = io();
+    const output = document.querySelector('.output');
+    const message = document.querySelector('.message');
+    const btn1 = document.querySelector('.btn1');
+    const btn2 = document.querySelector('.btn2');
+
+btn1.addEventListener('click', function() {
+    let id = 100;
+    let user = 'test user';
+    socket.emit('new player', id, user);
+});
+   </script>
+</html>

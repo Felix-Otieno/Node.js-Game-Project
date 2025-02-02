@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>It is all about God</h1>
+    <p>Dear God, <br>
+    Forgive me for the wrongs I have done today and the sins I am unaware of because you are my Redeemer.</p>
+    <input name="user" type="text" value="Laurence">
+    <button class="btn">Join</button>
+    <div class="output"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const btn = document.querySelector('.btn');
+        const user = document.querySelector('input[name="user"]');
+        const output = document.querySelector('.output');
+
+        btn.addEventListener('click', function() {
+            let id = 'player_' + Math.floor(Date.now() * Math.random());
+            socket.emit('new player', id, user.value);
+        });
+
+        socket.on('player', function(data) {
+            console.log("Received on client:", data);
+        });
+
+        socket.on('players', listPlayers);
+
+function listPlayers(players) {
+    console.log("List of players:", players);
+        }
+    </script>
+</body>
+</html>

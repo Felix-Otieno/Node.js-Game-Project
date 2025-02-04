@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelector Example</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p>This is a paragraph inside the container.</p>
+        <button>Click Me</button>
+    </div>
+
+    <script>
+        let section = document.querySelector(".container"); // Selects the container div
+        let buttonInsideSection = section.querySelector("button"); // Finds button inside the container
+        console.log(buttonInsideSection); // Logs the button element
+    </script>
+
+</body>
+</html>

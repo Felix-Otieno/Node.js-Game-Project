@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get previous siblings</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+    <script>
+        let current = document.querySelector('.current');
+        let prevSibling = current.previousElementSibling; // Corrected variable name
+
+        console.log(prevSibling);
+        
+        while (prevSibling) {
+            console.log(prevSibling.textContent); // Print the text of the previous sibling
+            prevSibling = prevSibling.previousElementSibling; // Move to the previous sibling
+        }
+    </script>
+</body>
+
+</html>

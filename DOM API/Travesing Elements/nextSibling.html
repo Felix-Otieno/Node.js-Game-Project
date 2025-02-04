@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get next siblings</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+    <script>
+        let current = document.querySelector('.current');
+        let nextSibling = current.nextElementSibling;
+
+        console.log(nextSibling);
+
+while(nextSibling) {
+    console.log(nextSibling);
+    nextSibling = nextSibling.nextElementSibling;
+}
+    </script>
+</body>
+
+</html>

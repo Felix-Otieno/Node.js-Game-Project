@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript cloneNode() method example</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <script>
+        let menu = document.querySelector('#menu');
+        let clonedMenu = menu.cloneNode(true);
+        clonedMenu.id = 'menu-mobile';
+        document.body.appendChild(clonedMenu);
+    </script>
+</body>
+</html>

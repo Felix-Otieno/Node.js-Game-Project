@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using JavaScript before() to insert a node before an element</title>
+</head>
+
+<body>
+    <p>This is JavaScript DOM before() method demo.</p>
+    <script>
+        const p = document.querySelector('p');
+
+        // create a new h1 element
+        const h1 = document.createElement('h1');
+        h1.innerText = 'JavaScript DOM - before()';
+
+        // insert the h1 before the paragraph
+        p.before(h1);
+    </script>
+</body>
+
+</html>

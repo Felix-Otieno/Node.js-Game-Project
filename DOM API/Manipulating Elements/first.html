@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding an element to a div</title>
+</head>
+<body>
+    <script>
+        const div = document.createElement('div');
+        div.id = 'content';
+        const heading = document.createElement('h1');
+        heading.innerText = 'A good thing the writing is on the wall';
+
+        div.appendChild(heading);
+
+        document.body.appendChild(div);
+
+    </script>  
+</body>
+</html>

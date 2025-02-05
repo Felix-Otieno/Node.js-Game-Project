@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic appendChild() example</title>
+</head>
+
+<body>
+    <ul id="menu">
+    </ul>
+    <script>
+        function createMenuItem(name) {
+            let li = document.createElement('li');
+            li.textContent = name;
+            return li;
+        }
+        // get the ul#menu
+        const menu = document.querySelector('#menu');
+        // add menu item
+        menu.appendChild(createMenuItem('Home'));
+        menu.appendChild(createMenuItem('Services'));
+        menu.appendChild(createMenuItem('About Us'));
+
+    </script>
+</body>
+
+</html>

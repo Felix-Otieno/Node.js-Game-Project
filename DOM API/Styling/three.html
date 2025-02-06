@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The getComputedStyle() method for pseudo-elements example</title>
+    <style>
+        body {
+            font: arial, sans-serif;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        p::first-letter {
+            font-size: 1.5em;
+            font-weight: normal
+        }
+    </style>
+</head>
+<body>
+    <p id='main'>JavaScript getComputedStyle() Demo for pseudo-elements</p>
+    <script>
+        let p = document.getElementById('main');
+        let style = getComputedStyle(p, '::first-letter');
+        console.log(style.fontSize);
+    </script>
+    
+</body>
+</html>

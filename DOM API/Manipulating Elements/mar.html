@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript insertBefore() example</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <script>
+        let menu = document.getElementById('menu');
+        // create a new li node
+        let li = document.createElement('li');
+        li.textContent = 'Home';
+
+        // insert a new node before the first list item
+        menu.insertBefore(li, menu.firstElementChild);
+    </script>
+</body>
+</html>

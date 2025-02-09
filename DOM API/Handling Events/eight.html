@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Keyboard Events: Key/Code</title>
+</head>
+<body>
+    <label for="message">Message:</label>
+    <input type="text" id="message">
+
+    <script>
+        let textBox = document.getElementById('message');
+        textBox.addEventListener('keydown', (event) => {
+            console.log(`key=${event.key},code=${event.code}`);
+
+        });
+    </script>
+</body>
+</html>

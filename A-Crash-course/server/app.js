@@ -1,17 +1,65 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+const Blog = require('./models/blog');
+const { result } = require('lodash');
 
 // Express app
 const app = express();
 
+// Connect to Mongodb
+const dbURI = 'mongodb+srv://netninja:test1234@nodetuts.lirov.mongodb.net/?retryWrites=true&w=majority&appName=NodeTuts';
+mongoose.connect(dbURI)
+.then((result) => app.listen(3000))
+.catch((err) => console.log(err));
+
+
 // Register view engine
 app.set('view engine', 'ejs');
 
-// listen for request
-app.listen(3000);
 
 // middleware and static files
 app.use(express.static('public'));
+
+// mongoose and mongo sandbox routes
+app.get('/add-blog', (req, res) => {
+  const blog = new Blog({
+    title: 'New blog',
+    snippet: 'about my new blog',
+    body: 'more about my new blog'
+  });
+
+
+  blog.save()
+       .then((result) => {
+        res.send(result);
+       })
+       .catch((err) => {
+        console.log(err);
+       });
+});
+
+app.get('/all-blogs', (req, res) => {
+   Blog.find()
+   .then((result) => {
+    res.send(result);
+   })
+   .catch((err) => {
+    console.log(err);
+   });
+
+});
+
+app.get('single-blog', (req, res) => {
+    Blog.findById()
+    .then((result) => {
+        res.send(result);
+       })
+       .catch((err) => {
+        console.log(err);
+       });
+});
+
 
 app.use(morgan('dev'));
 

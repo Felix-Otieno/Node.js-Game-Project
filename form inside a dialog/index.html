@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Dialog Form</title>
+</head>
+<body>
+    <dialog id="subscribeDialog">
+        <form method="dialog">
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </p>
+
+            <button type="submit" id="btnOk">Subscribe</button>
+        </form>
+    </dialog>
+    <button type="button" id="btnOpenDialog">Open Dialog</button>
+
+    <script>
+        const dialog = document.querySelector('#subscribeDialog');
+        const btnOpenDialog = document.querySelector('#btnOpenDialog');
+        btnOpenDialog.addEventListener('click', (event) => {
+            dialog.showModal();
+        });
+    </script>
+</body>
+</html>

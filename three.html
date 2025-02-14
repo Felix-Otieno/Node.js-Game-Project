@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Popover API example</title>
+    <style>
+        :popover-open {
+            position: absolute;
+            inset: unset;
+            top: 5px;
+            right: 5px;
+        }
+
+        @media all and (max-width: 450px) {
+            :popover-open {
+                left: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Press the letter <strong>h</strong> to toggle the popover.</p>
+        <div id="message" popover>This is a popover</div>
+        <script>
+            const isPopoverSupported = () => HTMLElement.prototype.hasOwnProperty("popover");
+
+            if (isPopoverSupported()) {
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "h") {
+                        message.togglePopover();
+                    }
+                });
+            }
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popover</title>
+    <style>
+        :popover-open {
+            position: absolute;
+            inset: unset;
+            top: 50px;
+        }
+
+        #popover1 {
+            left: 10px;
+        }
+
+        #popover2 {
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" popovertarget="popover1">Toggle popover 1</button>
+        <button type="button" popovertarget="popover2">Toggle popover 2</button>
+
+        <div id="popover1" popover="manual">This is popover 1</div>
+        <div id="popover2" popover="manual">This is popover 2</div>
+
+</body>
+</html>

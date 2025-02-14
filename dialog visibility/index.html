@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Dialog API</title>
+</head>
+<body>
+    <dialog id="myDialog">
+        <p>This is a dialog.</p>
+        <button id="closeDialog">Close</button>
+    </dialog>
+
+    <button type="button" id="openDialog">Open Dialog</button>
+
+    <script>
+        const btnOpen = document.querySelector('#openDialog');
+        const btnClose = document.querySelector('#closeDialog');
+        const dialog = document.querySelector('#myDialog');
+
+        btnOpen.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        btnClose.addEventListener('click', () => {
+            dialog.close();
+        });
+    </script> 
+</body>
+</html>

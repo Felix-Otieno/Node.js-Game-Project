@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JavaScript translate()</title>
+</head>
+<body>
+    <canvas id="canvas" height="300" width="500">
+    </canvas> 
+    <script>
+        const canvas = document.querySelector('#canvas');
+
+if (canvas.getContext) {
+
+    const ctx = canvas.getContext('2d');
+    // draw the first square
+    ctx.fillStyle = 'red';
+    ctx.fillRect(100, 100, 50, 50);
+
+    // translate
+    ctx.translate(150, 150);
+
+    // draw the second square
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(0, 0, 50, 50);
+}
+
+    </script>
+</body>
+</html>

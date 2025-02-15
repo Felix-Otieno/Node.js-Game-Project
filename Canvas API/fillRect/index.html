@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Canvas fillRect</title>
+</head>
+
+<body>
+    <h1>JavaScript Canvas fillRect</h1>
+
+    <canvas id="canvas" height="400" width="500">
+    </canvas>
+    <script>
+        function drawRectangles() {
+            const canvas = document.querySelector('#canvas');
+
+            if (!canvas.getContext) {
+                return;
+            }
+
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = '#F9DC5C';
+            ctx.fillRect(100, 100, 150, 100);
+
+            ctx.fillStyle = 'rgba(0,0,255,0.5)';
+            ctx.fillRect(200, 150, -150, -100);
+        }
+
+        drawRectangles();
+    </script>
+</body>
+
+</html>

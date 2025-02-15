@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text baseline</title>
+</head>
+<body>
+    <canvas id="canvas" width="550" height="500"></canvas>
+ <script>
+    const canvas = document.getElementById('canvas');
+
+if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+    const baselines = ['top', 'hanging', 'middle', 'alphabetic', 'ideographic', 'bottom'];
+    const str = 'The quick brown fox jumps over the lazy dog';
+    ctx.font = '20px san-serif';
+    ctx.strokeStyle = 'red';
+
+    baselines.forEach((baseline, index) => {
+        // set the text baseline
+        ctx.textBaseline = baseline;
+
+        const y = 75 + index * 75;
+        // draw a line
+        ctx.beginPath();
+        ctx.moveTo(0, y + 0.5);
+        ctx.lineTo(500, y + 0.5);
+        ctx.stroke();
+
+        // draw the text
+        ctx.fillText(`${str}(${baseline})`, 0, y);
+    });
+}
+ </script> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJavaScript Canvas clearRect</title>
+</head>
+<body>
+    <h1>JavaScript clearRect() Demo</h1>
+
+    <canvas id="canvas" height="400" width="500">
+    </canvas>
+    <script>
+        function draw() {
+    const canvas = document.querySelector('#canvas');
+
+    if (!canvas.getContext) {
+        return;
+    }
+
+    const ctx = canvas.getContext('2d');
+
+    // draw two squares
+    ctx.fillStyle = '#F9DC5C';
+    ctx.fillRect(50, 50, 150, 150);
+
+    ctx.fillStyle = 'rgba(0,0,255,0.5)';
+    ctx.fillRect(100, 100, 150, 150);
+
+    // clear the intersection
+    ctx.clearRect(100, 100, 100, 100);
+
+}
+
+draw();
+    </script>
+</body>
+</html>

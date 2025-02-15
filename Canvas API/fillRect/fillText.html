@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript fillText Demo</title>
+</head>
+<body>
+    <canvas id="canvas" height="400" width="500">
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.font = '10px curve';
+    ctx.fillText('Hello, Canvas!', 100, 200);
+}
+    </script>
+</body>
+</html>
